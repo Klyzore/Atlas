@@ -1,8 +1,8 @@
-Atlas/
+Atlas/      
 ├─ main.py
 ├─ requirements.txt
-├─ /cogs
+├─ cogs/
 │   ├─ utility.py
 │   └─ quotes.py
-└─ /data
+└─ data/
     └─ quotes.json
