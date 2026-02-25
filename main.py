@@ -5,8 +5,7 @@ import asyncio
 
 # Put all server IDs where you want commands to appear
 GUILD_IDS = [
-    1476042955579199612,  # Your test server
-    1451741504270766223,  # Another server
+    1476042955579199612,  # Your test server  # Another server
 ]
 
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.default())
