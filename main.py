@@ -3,30 +3,33 @@ from discord.ext import commands
 import os
 import asyncio
 
+# Your server ID here (as an int)
+GUILD_ID = 1476042955579199612  # ← Replace with your server's ID
+
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.default())
 
-# Load cogs
+# Load all cogs in /cogs folder
 async def load_cogs():
     for file in os.listdir("./cogs"):
         if file.endswith(".py"):
             await bot.load_extension(f"cogs.{file[:-3]}")
             print(f"Loaded cog: {file}")
 
-# sync commands after bot is ready
+# Sync commands to your test server when bot is ready
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user}")
-    for guild in bot.guilds:
-        try:
-            await bot.tree.sync(guild=guild)  # sync commands to each server
-            print(f"Synced commands in {guild.name}")
-        except Exception as e:
-            print(f"Failed to sync commands: {e}")
+    guild = discord.Object(id=GUILD_ID)
+    try:
+        await bot.tree.sync(guild=guild)  # only this server
+        print("Synced commands in test server")
+    except Exception as e:
+        print(f"Failed to sync commands: {e}")
 
+# Start the bot
 async def main():
     async with bot:
         await load_cogs()
         await bot.start(os.getenv("TOKEN"))
 
-# run the bot
 asyncio.run(main())
