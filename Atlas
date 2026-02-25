@@ -1,9 +1,8 @@
 Atlas/
-│
 ├─ main.py
 ├─ requirements.txt
 ├─ /cogs
-│    ├─ utility.py
-│    └─ quotes.py
+│   ├─ utility.py
+│   └─ quotes.py
 └─ /data
-     └─ quotes.json
+    └─ quotes.json
