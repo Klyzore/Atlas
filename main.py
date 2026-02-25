@@ -3,9 +3,8 @@ from discord.ext import commands
 import os
 import asyncio
 
-# Put all server IDs where you want commands to appear
 GUILD_IDS = [
-    1476042955579199612,  # Your test server  # Another server
+    1476042955579199612,  # Server im gonna use
 ]
 
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.default())
