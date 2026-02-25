@@ -1,8 +1,12 @@
-Atlas/      
-├─ main.py
-├─ requirements.txt
-├─ cogs/
-│   ├─ utility.py
-│   └─ quotes.py
-└─ data/
+Atlas/
+├─ main.py               
+├─ requirements.txt      
+├─ /cogs
+│   ├─ utility.py        
+│   │      import discord
+│   │      from discord import app_commands
+│   │      from discord.ext import commands
+│   │      # then the rest of your Utility class...
+│   └─ quotes.py        
+└─ /data
     └─ quotes.json
